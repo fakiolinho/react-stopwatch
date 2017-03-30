@@ -5,7 +5,8 @@
 ## Installation
 
 ```bash
-git clone 
-npm i
-npm start
+git clone https://github.com/fakiolinho/react-stopwatch.git
+npm i && npm start
 ```
+
+Check in your browser under `http://localhost:3000`
