@@ -1,0 +1,23 @@
+.counter {
+  &__digits {
+    font-size: 8rem;
+    text-align: center;
+    transition: .2s ease-out;
+  }
+
+  &__digit {
+    vertical-align: middle;
+  }
+
+  &__divider {
+    vertical-align: baseline;
+  }
+
+  &__buttons {
+    text-align: center;
+
+    .button + .button {
+      margin-left: 20px;
+    }
+  }
+}

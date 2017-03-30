@@ -1,0 +1,31 @@
+{
+    "plugins": [
+        "stylelint-scss",
+        "stylelint-order"
+    ],
+    "extends": "stylelint-config-standard",
+    "rules": {
+        "color-hex-case": ["upper", {"severity": "error"}],
+        "indentation": [2, {"severity": "error"}],
+        "color-hex-length": ["long", {"severity": "error"}],
+        "number-leading-zero": ["never", {"severity": "error"}],
+        "value-list-comma-space-after": "always",
+        "selector-no-id": [true, {"severity": "error"}],
+        "declaration-block-semicolon-newline-after": ["always", {"severity": "error"}],
+        "number-no-trailing-zeros": [true, {"severity": "error"}],
+        "length-zero-no-unit": [true, {"severity": "error"}],
+        "declaration-colon-space-after": ["always", {"severity": "error"}],
+        "block-closing-brace-newline-before": ["always", {"severity": "error"}],
+        "block-opening-brace-newline-after": ["always", {"severity": "error"}],
+        "at-rule-empty-line-before": null,
+        "shorthand-property-no-redundant-values": null,
+        "selector-pseudo-element-colon-notation": null,
+        "declaration-empty-line-before": null,
+        "declaration-block-no-duplicate-properties": null,
+        "no-empty-source": null,
+        "rule-non-nested-empty-line-before": "always",
+        "scss/declaration-nested-properties": ["never", {"severity": "error"}],
+        "order/declaration-block-properties-alphabetical-order": true,
+        "rule-nested-empty-line-before": ["always", {"severity": "error"}]
+    }
+}
