@@ -23,7 +23,7 @@ export default class Counter extends Component {
 
   render() {
     const { counter, isStarted, isPaused } = this.state;
-    const { hours, minutes, seconds, mseconds } = this.calculateTime(counter);
+    const { hours, minutes, seconds, milliseconds } = this.calculateTime(counter);
 
     return (
       <div className="counter">
@@ -34,7 +34,7 @@ export default class Counter extends Component {
           <span className="counter__divider">:</span>
           <span className="counter__digit">{seconds}</span>
           <span className="counter__divider">:</span>
-          <span className="counter__digit">{mseconds}</span>
+          <span className="counter__digit">{milliseconds}</span>
         </p>
         <div className="counter__buttons">
           {(isStarted && !isPaused) && <Button onClick={this.handlePause}>Pause</Button>}
@@ -58,7 +58,7 @@ export default class Counter extends Component {
       isStarted: true,
       isPaused: false,
     });
-    this.counterInterval = setInterval(() => this.counterStart(), 100);
+    this.counterInterval = setInterval(() => this.counterStart(), 10);
   };
 
   handleStop = () => {
@@ -73,8 +73,8 @@ export default class Counter extends Component {
   };
 
   handleSaveLap = () => {
-    const { hours, minutes, seconds, mseconds } = this.calculateTime(this.lap);
-    const lapString = `${hours}:${minutes}:${seconds}:${mseconds}`;
+    const { hours, minutes, seconds, milliseconds } = this.calculateTime(this.lap);
+    const lapString = `${hours}:${minutes}:${seconds}:${milliseconds}`;
 
     this.lap = 0;
     this.props.saveLaps(lapString);
@@ -82,23 +82,23 @@ export default class Counter extends Component {
 
   counterStart() {
     this.setState(prevState => ({
-      counter: prevState.counter + 100,
+      counter: prevState.counter + 10,
     }));
 
-    this.lap += 100;
+    this.lap += 10;
   }
 
   calculateTime(counter) {
-    const hours = this.formatDigits(parseInt((counter / (1000 * 60 * 60)), 10));
-    const minutes = this.formatDigits(parseInt((counter / (1000 * 60)) % 60, 10));
-    const seconds = this.formatDigits(parseInt((counter / 1000) % 60, 10));
-    const mseconds = this.formatDigits(parseInt((counter % 1000) / 100, 10));
+    const hours = this.formatDigits(Math.floor((counter / (1000 * 60 * 60))));
+    const minutes = this.formatDigits(Math.floor((counter / (1000 * 60)) % 60));
+    const seconds = this.formatDigits(Math.floor((counter / 1000) % 60));
+    const milliseconds = this.formatDigits(Math.floor((counter % 1000) / 10));
 
     return {
       hours,
       minutes,
       seconds,
-      mseconds,
+      milliseconds,
     };
   }
 
