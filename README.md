@@ -1,6 +1,6 @@
 # React Stopwatch
 
-![](https://media.giphy.com/media/xUA7aQpfEljj8BhoLS/giphy.gif)
+![](https://media.giphy.com/media/3oKIPq0dJrp4LNKKVW/giphy.gif)
 
 ## Installation
 
