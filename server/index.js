@@ -1,10 +1,10 @@
-import { join } from 'path';
-import express from 'express';
-import bodyParser from 'body-parser';
-import compression from 'compression';
-import fallback from 'express-history-api-fallback';
+const { join } = require('path');
+const express = require('express');
+const bodyParser = require('body-parser');
+const compression = require('compression');
+const fallback = require('express-history-api-fallback');
 
-import laps from './routes/laps';
+const laps = require('./routes/laps');
 
 const { NODE_ENV } = process.env;
 const app = express();
@@ -48,4 +48,4 @@ if (NODE_ENV === 'development') {
 // START THE SERVER
 app.listen(3000, () => console.log('Server started on port 3000'));
 
-export default app;
+module.exports = app;

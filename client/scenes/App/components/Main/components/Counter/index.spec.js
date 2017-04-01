@@ -27,7 +27,7 @@ describe('test Counter component', () => {
     const props = {
       saveLaps: jest.fn(),
     };
-    const enzymeWrapper = mount(<Counter {...props} />);
+    const enzymeWrapper = shallow(<Counter {...props} />);
 
     expect(enzymeWrapper.instance().calculateTime(0)).toEqual({
       hours: '00',
@@ -65,7 +65,7 @@ describe('test Counter component', () => {
     const props = {
       saveLaps: jest.fn(),
     };
-    const enzymeWrapper = mount(<Counter {...props} />);
+    const enzymeWrapper = shallow(<Counter {...props} />);
 
     expect(enzymeWrapper.instance().formatDigits(1)).toBe('01');
     expect(enzymeWrapper.instance().formatDigits('01')).toBe('01');
@@ -75,7 +75,7 @@ describe('test Counter component', () => {
     const props = {
       saveLaps: jest.fn(),
     };
-    const enzymeWrapper = mount(<Counter {...props} />);
+    const enzymeWrapper = shallow(<Counter {...props} />);
 
     expect(enzymeWrapper.state('isStarted')).toBeFalsy();
 
@@ -88,7 +88,7 @@ describe('test Counter component', () => {
     const props = {
       saveLaps: jest.fn(),
     };
-    const enzymeWrapper = mount(<Counter {...props} />);
+    const enzymeWrapper = shallow(<Counter {...props} />);
     enzymeWrapper.instance().handleSaveLap();
 
     expect(enzymeWrapper.instance().lap).toBe(0);
@@ -99,7 +99,7 @@ describe('test Counter component', () => {
     const props = {
       saveLaps: jest.fn(),
     };
-    const enzymeWrapper = mount(<Counter {...props} />);
+    const enzymeWrapper = shallow(<Counter {...props} />);
     enzymeWrapper.setState({ counter: 500 });
     enzymeWrapper.instance().lap = 500;
     enzymeWrapper.instance().counterStart();
@@ -126,7 +126,7 @@ describe('test Counter component', () => {
     const props = {
       saveLaps: jest.fn(),
     };
-    const enzymeWrapper = mount(<Counter {...props} />);
+    const enzymeWrapper = shallow(<Counter {...props} />);
     enzymeWrapper.instance().handlePause();
 
     expect(enzymeWrapper.state('isPaused')).toBeTruthy();

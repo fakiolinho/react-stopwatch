@@ -3,6 +3,7 @@
   "env": {
     "browser": true,
     "node": true,
+    "commonjs": true,
     "es6": true,
     "jest": true
   },
@@ -12,8 +13,9 @@
   },
   "settings": {
     "import/resolver": {
-      "webpack": {
-        "config" : "webpack.config.js"
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": ["node_modules", "client"]
       }
     }
   },
