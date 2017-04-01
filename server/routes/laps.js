@@ -1,12 +1,12 @@
-import fs from 'fs';
-import path from 'path';
-import express from 'express';
+const fs = require('fs');
+const { resolve } = require('path');
+const express = require('express');
 
 const router = express.Router();
 
 router
 .get('/', (req, res) => {
-  fs.readFile(path.resolve(__dirname, '../db.txt'), { encoding: 'utf8' }, (err, data) => {
+  fs.readFile(resolve(__dirname, '../db.txt'), { encoding: 'utf8' }, (err, data) => {
     if (err) {
       return res
       .status(500)
@@ -25,7 +25,7 @@ router
 .post('/', (req, res) => {
   const { laps } = req.body;
 
-  fs.writeFile(path.resolve(__dirname, '../db.txt'), JSON.stringify(laps), err => {
+  fs.writeFile(resolve(__dirname, '../db.txt'), JSON.stringify(laps), err => {
     if (err) {
       return res
       .status(500)
@@ -42,4 +42,4 @@ router
   });
 });
 
-export default router;
+module.exports = router;
