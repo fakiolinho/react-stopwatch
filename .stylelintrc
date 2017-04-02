@@ -23,9 +23,8 @@
         "declaration-empty-line-before": null,
         "declaration-block-no-duplicate-properties": null,
         "no-empty-source": null,
-        "rule-non-nested-empty-line-before": "always",
-        "scss/declaration-nested-properties": ["never", {"severity": "error"}],
+        "rule-empty-line-before": ["always", {"severity": "error", "except": "first-nested"}],
         "order/declaration-block-properties-alphabetical-order": true,
-        "rule-nested-empty-line-before": ["always", {"severity": "error"}]
+        "scss/declaration-nested-properties": ["never", {"severity": "error"}]
     }
 }
