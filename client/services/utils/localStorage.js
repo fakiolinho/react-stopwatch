@@ -2,7 +2,7 @@ import _merge from 'lodash/merge';
 
 export const loadState = () => {
   try {
-    const serializedState = localStorage.getItem('state');
+    const serializedState = localStorage.getItem('stopwatch');
 
     if (serializedState === null) {
       return undefined;
@@ -16,7 +16,7 @@ export const loadState = () => {
 
 export const saveState = state => {
   try {
-    localStorage.setItem('state', JSON.stringify(state));
+    localStorage.setItem('stopwatch', JSON.stringify(state));
   } catch (e) {
     // TODO: Log errors
   }
@@ -32,7 +32,7 @@ export const updateState = state => {
 
 export const clearState = () => {
   try {
-    localStorage.removeItem('state');
+    localStorage.removeItem('stopwatch');
   } catch (e) {
     // TODO: Log errors
   }
