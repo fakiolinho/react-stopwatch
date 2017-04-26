@@ -1,6 +1,6 @@
 {
   "name": "react-stopwatch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple StopWatch SPA built with ReactJS and Express",
   "main": "./dist/index.js",
   "author": {
@@ -36,6 +36,7 @@
     "express-history-api-fallback": "^2.1.0",
     "lodash": "^4.17.4",
     "normalize.css": "^6.0.0",
+    "prop-types": "^15.5.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
@@ -73,7 +74,7 @@
     "node-sass": "^4.5.2",
     "nodemon": "^1.11.0",
     "postcss-loader": "^1.3.3",
-    "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^15.5.4",
     "redux-mock-store": "^1.2.2",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",

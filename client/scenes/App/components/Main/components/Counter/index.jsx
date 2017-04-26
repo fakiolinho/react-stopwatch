@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import _padStart from 'lodash/padStart';
 
 import Button from 'components/Button';
